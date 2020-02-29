@@ -9,6 +9,21 @@ class Carro:
         self.cor = cor
         self.portas = portas
 
+    def getNome(self):
+        return self.nome
+    
+    def getAno(self):
+        return self.ano
+
+    def getKm(self):
+        return self.km
+
+    def getCor(self):
+        return self.cor
+
+    def getPortas(self):
+        return self.portas
+
 carros = []
 
 for i in range(1, 15):
@@ -40,11 +55,11 @@ for i in range(1, 15):
     carrobj = Carro(nome, ano, km, cor, portas)
     carros.append(carrobj)  
 
-nomes = [i.nome.replace('\n', '') for i in carros if i.nome is not None]
-anos = [i.ano.replace('\n', '') for i in carros if i.ano is not None]
-kms = [i.km.replace('\n', '') for i in carros if i.km is not None]
-cores = [i.cor.replace('\n', '') for i in carros if i.cor is not None]
-portas = [i.portas.replace(' portas', '').replace('\n', '') for i in carros if i.portas is not None]
+nomes = [i.getNome().replace('\n', '') for i in carros if i.nome is not None]
+anos = [i.getAno().replace('\n', '') for i in carros if i.ano is not None]
+kms = [i.getKm().replace('\n', '') for i in carros if i.km is not None]
+cores = [i.getCor().replace('\n', '') for i in carros if i.cor is not None]
+portas = [i.getPortas().replace(' portas', '').replace('\n', '') for i in carros if i.portas is not None]
 
 plt.plot(anos, nomes)
 plt.title('Anos de lançamento')

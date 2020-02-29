@@ -37,7 +37,6 @@ for i in range(1, 15):
     if portas is None:
         portas = 'Nao especificado'
 
-    portas.replace(' portas', '')
     carrobj = Carro(nome, ano, km, cor, portas)
     carros.append(carrobj)  
 
